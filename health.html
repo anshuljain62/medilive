@@ -1,0 +1,35 @@
+
+<h1 align="center" style="color:green;">Welcome to Health Diagnosis System</h1>
+
+<div class="container">
+
+    <div ng-controller="myCtrl">
+        <div >
+            <h3 >All Body parts  Are</h3>
+            <p ng-repeat="allbodypart in allbodyparts">{{allbodypart.Name}} Id is={{allbodypart.ID}}</p>
+         </div>
+    </div>
+
+    <div ng-controller="subbodyparts">
+            <h3>Enter The Id of Body Part Here:</h3>
+            <input class="form-control" ng-model="bdyid"><br/>
+            <button type="button" class="btn btn-danger" ng-click='callurl()'>Submit</button>
+            <p ng-repeat="subbdypart in subbdyparts">{{subbdypart.Name}} Id is={{subbdypart.ID}}</p>
+    </div>
+
+    <div ng-controller="showsympsub">
+            <h3>Enter the Sub Body Part Id:</h3>
+            <input class="form-control" ng-model="subbdy">
+            <h3>Select The Category</h3>
+            <ul>
+                <li><button type="button" class="btn btn-primary" ng-click='manclick()'>Man</button></li><br/>
+                <li><button type="button" class="btn btn-success" ng-click='womanclick()'>Woman</button></li><br/>
+                <li><button type="button" class="btn btn-info" ng-click='boyclick()'>Boy</button></li><br/>
+                <li><button type="button" class="btn btn-warning" ng-click='girlclick()'>Girl</button></li>
+            </ul>
+            <p style="color: darkblue">Symptoms Are :</p>
+
+            <p ng-repeat="symptom in symptomcom">{{symptom.Name}} Id is={{symptom.ID}}</p>
+        </div>
+    </div>
+
